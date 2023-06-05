@@ -9,11 +9,15 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
+        maven {
+            name = "jitpack"
+            url = "https://jitpack.io"
+        }
         maven { url = "https://plugins.gradle.org/m2/" }
         jcenter()
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath 'com.github.GTNewHorizons:ForgeGradle:1.2.11'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
         classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.0.9"
     }
@@ -26,13 +30,12 @@ apply plugin: "com.matthewprenger.cursegradle"
 
 ext.build = System.getenv('TRAVIS_BUILD_NUMBER')
 ext.tag = System.getenv("TRAVIS_TAG")
-version = "1.7.10-1.0"
-version =  version + "-build-T" + ext.build
+version = "KAMKEEL-v1"
 group= "com.rolandoislas.theframework" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "TheFramework"
 
 minecraft {
-    version = "1.7.10-10.13.4.1448-1.7.10"
+    version = "1.7.10-10.13.4.1614-1.7.10"
     runDir = "eclipse"
     replace("@VERSION@", project.version)
 }
