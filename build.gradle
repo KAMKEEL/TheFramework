@@ -1,9 +1,8 @@
 buildscript {
     repositories {
-        mavenCentral()
         maven {
             name = "forge"
-            url = "http://files.minecraftforge.net/maven"
+            url = "https://maven.minecraftforge.net/"
         }
         maven {
             name = "sonatype"
@@ -13,7 +12,13 @@ buildscript {
             name = "jitpack"
             url = "https://jitpack.io"
         }
+        maven {
+            name = "gt"
+            url = "https://gregtech.mechaenetia.com/"
+        }
+        mavenCentral()
         maven { url = "https://plugins.gradle.org/m2/" }
+        maven { url = "https://repo.grails.org/grails/core/" } // Add this line
         jcenter()
     }
     dependencies {
@@ -30,7 +35,7 @@ apply plugin: "com.matthewprenger.cursegradle"
 
 ext.build = System.getenv('TRAVIS_BUILD_NUMBER')
 ext.tag = System.getenv("TRAVIS_TAG")
-version = "KAMKEEL-v1"
+version = "KAMKEEL-v2"
 group= "com.rolandoislas.theframework" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "TheFramework"
 
