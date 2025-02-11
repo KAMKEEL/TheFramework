@@ -13,7 +13,6 @@ public class CommonProxy {
 	public void prepareClient() {}
 	
 	public void registerEvents() {
-		MinecraftForge.EVENT_BUS.register(new MinecraftTranslator());
 		MinecraftForge.EVENT_BUS.register(new TooltipHandler());
 		MinecraftForge.EVENT_BUS.register(new CommandBroadcastHandler());
 		MinecraftForge.EVENT_BUS.register(CollectiveFramework.instance);
